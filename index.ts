@@ -5,7 +5,7 @@ import {
   getAddress,
 } from "viem";
 import { WindowProvider } from 'wagmi'
-import type { Chain } from "@wagmi/chains"
+import type { Chain } from "@wagmi/core/chains"
 
 type InjectedConnectorOptions = {
   /** Name of connector */
@@ -95,7 +95,7 @@ export class GatewalletConnector extends InjectedConnector {
         const accounts = await provider.request({
           method: "eth_requestAccounts",
         });
-        account = getAddress(accounts[0]);
+        account = getAddress(accounts[0] as string);
       }
       // Switch to chain if provided
       let id = await this.getChainId();

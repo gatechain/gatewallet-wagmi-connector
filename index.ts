@@ -5,7 +5,7 @@ import {
   getAddress,
 } from "viem";
 import { WindowProvider } from 'wagmi'
-import type { Chain } from "@wagmi/core/chains"
+import type { Chain } from "@wagmi/chains"
 
 type InjectedConnectorOptions = {
   /** Name of connector */
